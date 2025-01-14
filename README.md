@@ -29,3 +29,6 @@ REFERENCES
 - compile the code with make CTRL
 - set up flow parameters in in_hre
 - run the code using your parallel architecture (e.g. mpirun -np 48 ./CTRL < in_hre)
+
+### Questions:
+If you would like to use the code or have questions, please contact me on github
