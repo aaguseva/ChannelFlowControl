@@ -36,13 +36,13 @@ mzmax = 5           ! max mz to control
 /
 
 &parameters_file
-filout = '/drive/aguseva/v_control/const_dx_shift/x_lag_0.1/2p1p950' ! output file max 50 char
-filinp = '/drive/aguseva/Re950_2pipi_noslip_bc/2p1p950.217'
-filstt = '/drive/aguseva/v_control/const_dx_shift/x_lag_0.1/2p1p950'
+filout = '/path/to/your/outputfilename' ! output file max 50 char
+filinp = '/path/to/your/inputfile'
+filstt = '/path/to/your/outputfileforstats'
 id22 = 0 ! first output file number
 /
 
 &parameters_var   ! check if they are used
 ifor = 0          ! zeroing phi: 1 - yes, 0 - no
-nstart = 1        ! 0 - nothing,  1- start stat, 2 - read file
+nstart = 1        ! 0 - nothing,  1 - start stat, 2 - read file
 /
