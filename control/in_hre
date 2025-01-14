@@ -1,0 +1,48 @@
+&parameters_setup
+Re   = 2.058e+04  ! Reynolds number, 1/\nu
+alp  = 1.0        ! Lx = 2*pi*/alp
+bet  = 2.0        ! Lz = 2*pi/bet
+a0   = 0.53       ! -u at the walls
+imesh = 2         ! mesh type: 0 - unif, 1 - tanh, 2 - sin
+gamma = 0.93      ! mesh parameter
+/
+
+&parameters_timestep
+Delt = 5.e-03     ! time step
+var_dt = 1	      ! 1 for variable timestep and 0 for fixed to Delt
+CFL = 0.1         ! CFL
+nstep = 1000000   ! number of time steps
+nimag = 1000      ! write image every nimag step
+nhist = 50        ! calculate history every nhist step
+ntimes = 50       ! steps between statistics
+istart = 1        ! Start par: 0 - continue, 1 -restart time
+/
+
+&parameters_control
+alp_u = 0.          ! set for u - control, CAREFUL with BC for 00 mode - probably wrong
+alp_v = -1.         ! set for v - control
+alp_w = 0.          ! set for w - control, CAREFUL with BC for 00 mode - probably wrong
+nplane_c = 48       ! plane at which u, v, w  is copied
+t_lag = 7.342       ! phase of control -i*kx*((U-a0)*t_lag + x_lag)
+x_lag = 1.8         ! set dt_lag=0 for ctrl independent of mean U, set dt_lag=0 and dx_lag=0 for no phase shift
+f_wU = 0            ! if f_wU set to 1, ctrl is sync to U(nplane_c) (t_lag = c(rkstep)*Deltat ...RK substep time)
+f_lse = 0           ! if use LSE or not (set 1 if yes, otherwise 0)
+savefields = 0      ! if save u,v,w, tauxy, tauyz and pressure in phys space
+dtc = 1             ! integer, control every dtc time steps
+mxmin = 0           ! min mx to use for opposition ctrl
+mzmin = 0           ! min mz to use for opposition ctrl
+mxmax = 6           ! max mx to control
+mzmax = 5           ! max mz to control
+/
+
+&parameters_file
+filout = '/drive/aguseva/v_control/const_dx_shift/x_lag_0.1/2p1p950' ! output file max 50 char
+filinp = '/drive/aguseva/Re950_2pipi_noslip_bc/2p1p950.217'
+filstt = '/drive/aguseva/v_control/const_dx_shift/x_lag_0.1/2p1p950'
+id22 = 0 ! first output file number
+/
+
+&parameters_var   ! check if they are used
+ifor = 0          ! zeroing phi: 1 - yes, 0 - no
+nstart = 1        ! 0 - nothing,  1- start stat, 2 - read file
+/
