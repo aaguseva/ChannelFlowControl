@@ -31,4 +31,4 @@ REFERENCES
 - run the code using your parallel architecture (e.g. mpirun -np 48 ./CTRL < in_hre)
 
 ### Questions:
-If you would like to use the code or have questions, please contact me through github or via email
+If you have questions about the code, please contact me through github or via email
