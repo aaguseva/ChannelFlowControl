@@ -7,4 +7,17 @@ Contributors: A. Guseva, O. Flores and J. Jiménez
 
 REFERENCES 
 - Guseva, A. and Jiménez, J. (2022) Linear instability and resonance effects in large-scale opposition flow control. J. Fluid Mech., 935, A35.   
-- Kim,J., Moin,P. and Moser,R. (1987) Turbulence Statistics in fully developped channel flow at low Reynolds numbers, J. Fluid Mech., 177, 133-166 
+- Kim,J., Moin,P. and Moser,R. (1987) Turbulence Statistics in fully developped channel flow at low Reynolds numbers, J. Fluid Mech., 177, 133-166
+
+  ### Short description of files
+
+- main.f90 - principal file reading initial conditions and calling the time loop  
+- ctes3D - constants defining numerical resolution and locations of spectra
+- in_hre - namelists with input parameters (Reynolds number, domain size, control parameters, input and output)
+- cross.v2.f90 - timestepper; linear and nonlinear terms
+- io.f90 - input and output
+- cfdiff8.v7.f90 - compact finite difference subroutines
+- modules.v7.f90 - definitions of common variables for the code parts
+- fou3D.f, rftsingle.f, cftsingle.f - Fourier transform subroutines
+- laps.v7.f - solving Poisson problem v'' - rK v = phi 
+
