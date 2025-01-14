@@ -9,7 +9,7 @@ REFERENCES
 - Guseva, A. and Jiménez, J. (2022) Linear instability and resonance effects in large-scale opposition flow control. J. Fluid Mech., 935, A35.   
 - Kim,J., Moin,P. and Moser,R. (1987) Turbulence Statistics in fully developped channel flow at low Reynolds numbers, J. Fluid Mech., 177, 133-166
 
-  ### Short description of files
+### Short description of files
 
 - main.f90 - principal file reading initial conditions and calling the time loop  
 - ctes3D - constants defining numerical resolution and locations of spectra
@@ -20,4 +20,12 @@ REFERENCES
 - modules.v7.f90 - definitions of common variables for the code parts
 - fou3D.f, rftsingle.f, cftsingle.f - Fourier transform subroutines
 - laps.v7.f - solving Poisson problem v'' - rK v = phi 
+- makefile - gathers all the code files for compilation
 
+### To use the code
+- install MPI / Fortran MPI compilers
+- set up compiler parameters in the makefile (e.g. mpiifort or mpif90)
+- choose resolution in ctes3D
+- compile the code with make CTRL
+- set up flow parameters in in_hre
+- run the code using your parallel architecture (e.g. mpirun -np 48 ./CTRL < in_hre)
